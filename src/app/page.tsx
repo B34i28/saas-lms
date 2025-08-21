@@ -1,12 +1,51 @@
+import CompanionCard from '@/components/CompanionCard'
+import CompanionList from '@/components/CompanionList'
+import CTA from '@/components/CTA'
 import { Button } from '@/components/ui/button'
+import { recentSessions } from '@/constants'
 import React from 'react'
 
 const Page = () => {
   return (
-    <div>
-      <h1>Home</h1>
-      <Button>Button</Button>
-    </div>
+    <main>
+      <h1 className='text-2xl'>Popular Companion</h1>
+      <section className='home-section'>
+        <CompanionCard 
+          id="123"
+          name="Neura the Brainy Explorer"
+          subject="science"
+          topic="Neural Network of the Brain"
+          duration={45}
+          color="#ffda6e"
+        />
+        <CompanionCard 
+          id="456"
+          name="Codey the Coding Wizard"
+          subject="Maths"
+          topic="Derivative & Integral"
+          duration={30}
+          color="#E5D0FF"
+        />
+        <CompanionCard 
+          id="789"
+          name="Verba the Vocabulary Builder"
+          subject="English Literature"
+          topic="language"
+          duration={30}
+          color="#BDE7FF"
+        />
+        
+      </section>
+
+      <section className='home-section'>
+        <CompanionList 
+          title="Recently completed sessions"
+          companions={recentSessions}
+          className='w-2/3 max-lg:w-full'
+        />
+        <CTA />
+      </section>
+    </main>
   )
 }
 
